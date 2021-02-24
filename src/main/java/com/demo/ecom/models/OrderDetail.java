@@ -3,6 +3,8 @@
  */
 package com.demo.ecom.models;
 
+import com.demo.ecom.entities.Product;
+
 /**
  * Class to hold product order information.
  * 

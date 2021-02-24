@@ -12,11 +12,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.demo.ecom.constants.ApiConstant;
+import com.demo.ecom.entities.Product;
+import com.demo.ecom.entities.ProductOrder;
 import com.demo.ecom.exceptions.InventoryValidationException;
 import com.demo.ecom.models.OrderDetail;
 import com.demo.ecom.models.OrderValidationError;
-import com.demo.ecom.models.Product;
-import com.demo.ecom.models.ProductOrder;
 import com.demo.ecom.models.ProductOrderResponse;
 import com.demo.ecom.repository.ProductOrderRepository;
 import com.demo.ecom.repository.ProductRepository;

@@ -9,7 +9,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.demo.ecom.models.Product;
+import com.demo.ecom.entities.Product;
 import com.demo.ecom.repository.ProductRepository;
 
 /**

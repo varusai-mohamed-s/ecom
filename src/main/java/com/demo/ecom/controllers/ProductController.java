@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.demo.ecom.models.Product;
+import com.demo.ecom.entities.Product;
 import com.demo.ecom.services.IProductService;
 
 /**

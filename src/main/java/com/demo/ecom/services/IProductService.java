@@ -2,7 +2,7 @@ package com.demo.ecom.services;
 
 import java.util.List;
 
-import com.demo.ecom.models.Product;
+import com.demo.ecom.entities.Product;
 
 /**
  * 

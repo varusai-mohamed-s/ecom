@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.demo.ecom.models;
+package com.demo.ecom.entities;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

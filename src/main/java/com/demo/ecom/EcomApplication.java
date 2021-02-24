@@ -12,7 +12,7 @@ import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 import org.springframework.web.filter.CorsFilter;
 
-import com.demo.ecom.models.Product;
+import com.demo.ecom.entities.Product;
 import com.demo.ecom.repository.ProductRepository;
 
 /**
@@ -34,6 +34,11 @@ public class EcomApplication {
 		SpringApplication.run(EcomApplication.class, args);
 	}
 
+	/**
+	 * Method which allows cross origin resource sharing CORS
+	 * 
+	 * @return Returns FilterRegistrationBean object.
+	 */
 	@SuppressWarnings({ "rawtypes", "unchecked" })
 	@Bean
 	public FilterRegistrationBean corsFilter() {
@@ -61,6 +66,12 @@ public class EcomApplication {
 		return configuration;
 	}
 
+	/**
+	 * Initialize in-memory database with default products.
+	 * 
+	 * @param repository The Product repository.
+	 * @return Returns CommandLineRunner.
+	 */
 	@Bean
 	public CommandLineRunner demo(ProductRepository repository) {
 		return (args) -> {

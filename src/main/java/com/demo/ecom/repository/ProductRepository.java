@@ -5,7 +5,7 @@ package com.demo.ecom.repository;
 
 import org.springframework.data.repository.CrudRepository;
 
-import com.demo.ecom.models.Product;
+import com.demo.ecom.entities.Product;
 
 /**
  * Repository to handle {@link Order}.
