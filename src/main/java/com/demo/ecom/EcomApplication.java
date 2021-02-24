@@ -3,6 +3,7 @@ package com.demo.ecom;
 import java.util.Collections;
 
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
@@ -10,6 +11,9 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 import org.springframework.web.filter.CorsFilter;
+
+import com.demo.ecom.models.Product;
+import com.demo.ecom.repository.ProductRepository;
 
 /**
  * Entry point to the application.
@@ -55,5 +59,17 @@ public class EcomApplication {
 		configuration.addAllowedMethod("*");
 
 		return configuration;
+	}
+
+	@Bean
+	public CommandLineRunner demo(ProductRepository repository) {
+		return (args) -> {
+			// save a few products
+			repository.save(new Product("Product 1", 500.0, 4, "Product 1 description", 20));
+			repository.save(new Product("Product 2", 1300.0, 2, "Product 2 description", 200));
+			repository.save(new Product("Product 3", 700.0, 3, "Product 3 description", 70));
+			repository.save(new Product("Product 4", 640.0, 3, "Product 4 description", 10));
+			repository.save(new Product("Product 5", 1100.0, 5, "Product 5 description", 0));
+		};
 	}
 }

@@ -13,8 +13,8 @@ import java.util.List;
  */
 public class ProductOrderResponse {
 	private List<OrderValidationError> errors;
-	private List<ProductOrder> successfulTransactions;
-	private List<ProductOrder> failedTransactions;
+	private List<OrderDetail> successfulTransactions;
+	private List<OrderDetail> failedTransactions;
 
 	/**
 	 * @return the errors
@@ -33,28 +33,28 @@ public class ProductOrderResponse {
 	/**
 	 * @return the successfulTransactions
 	 */
-	public List<ProductOrder> getSuccessfulTransactions() {
+	public List<OrderDetail> getSuccessfulTransactions() {
 		return successfulTransactions;
 	}
 
 	/**
 	 * @param successfulTransactions the successfulTransactions to set
 	 */
-	public void setSuccessfulTransactions(List<ProductOrder> successfulTransactions) {
+	public void setSuccessfulTransactions(List<OrderDetail> successfulTransactions) {
 		this.successfulTransactions = successfulTransactions;
 	}
 
 	/**
 	 * @return the failedTransactions
 	 */
-	public List<ProductOrder> getFailedTransactions() {
+	public List<OrderDetail> getFailedTransactions() {
 		return failedTransactions;
 	}
 
 	/**
 	 * @param failedTransactions the failedTransactions to set
 	 */
-	public void setFailedTransactions(List<ProductOrder> failedTransactions) {
+	public void setFailedTransactions(List<OrderDetail> failedTransactions) {
 		this.failedTransactions = failedTransactions;
 	}
 

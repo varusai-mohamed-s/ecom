@@ -10,9 +10,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.demo.ecom.models.ProductOrder;
+import com.demo.ecom.models.OrderDetail;
 import com.demo.ecom.models.ProductOrderResponse;
-import com.demo.ecom.services.IOrderService;
+import com.demo.ecom.services.IProductOrderService;
 
 /**
  * This class handles all the request related to order.
@@ -21,18 +21,18 @@ import com.demo.ecom.services.IOrderService;
  *
  */
 @RestController
-public class OrderController {
+public class ProductOrderController {
 	@Autowired
-	private IOrderService orderService;
+	private IProductOrderService productOrderService;
 
 	/**
 	 * This method processes the order.
 	 * 
-	 * @param productOrderList The product order list.
+	 * @param orderDetailList The product order list.
 	 * @return Returns the response of type {@link ProductOrderResponse}
 	 */
 	@PostMapping("/order")
-	public ProductOrderResponse order(@RequestBody final List<ProductOrder> productOrderList) {
-		return orderService.order(productOrderList);
+	public ProductOrderResponse order(@RequestBody final List<OrderDetail> orderDetailList) {
+		return productOrderService.order(orderDetailList);
 	}
 }

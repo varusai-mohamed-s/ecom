@@ -3,28 +3,82 @@
  */
 package com.demo.ecom.models;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
 /**
- * Class to hold product order information.
- * 
  * @author Varusai
  *
  */
+@Entity
 public class ProductOrder {
-	private ProductDetail productDetail;
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private Long id;
+	private String name;
+	private double price;
 	private int quantity;
 
 	/**
-	 * @return the productDetail
+	 * 
 	 */
-	public ProductDetail getProductDetail() {
-		return productDetail;
+	public ProductOrder() {
+		// TODO Auto-generated constructor stub
 	}
 
 	/**
-	 * @param productDetail the productDetail to set
+	 * @param name
+	 * @param price
+	 * @param quantity
 	 */
-	public void setProductDetail(final ProductDetail productDetail) {
-		this.productDetail = productDetail;
+	public ProductOrder(String name, double price, int quantity) {
+		this.name = name;
+		this.price = price;
+		this.quantity = quantity;
+	}
+
+	/**
+	 * @return the id
+	 */
+	public Long getId() {
+		return id;
+	}
+
+	/**
+	 * @param id the id to set
+	 */
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	/**
+	 * @return the name
+	 */
+	public String getName() {
+		return name;
+	}
+
+	/**
+	 * @param name the name to set
+	 */
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	/**
+	 * @return the price
+	 */
+	public double getPrice() {
+		return price;
+	}
+
+	/**
+	 * @param price the price to set
+	 */
+	public void setPrice(double price) {
+		this.price = price;
 	}
 
 	/**

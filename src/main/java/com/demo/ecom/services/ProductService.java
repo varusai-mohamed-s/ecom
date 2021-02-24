@@ -3,14 +3,14 @@
  */
 package com.demo.ecom.services;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.demo.ecom.models.Product;
-import com.demo.ecom.models.ProductDetail;
-import com.demo.ecom.repository.IProductRepository;
+import com.demo.ecom.repository.ProductRepository;
 
 /**
  * Service class for Product.
@@ -22,16 +22,18 @@ import com.demo.ecom.repository.IProductRepository;
 public class ProductService implements IProductService {
 
 	@Autowired
-	private IProductRepository productRepository;
+	private ProductRepository productRepository;
 
 	@Override
 	public List<Product> getProducts() {
-		return productRepository.getProducts();
+		final List<Product> productList = new ArrayList<>();
+		productRepository.findAll().forEach(productList::add);
+		return productList;
 	}
 
 	@Override
-	public ProductDetail getProductDetail(Long id) {
-		return productRepository.getProductDetails(id);
+	public Product getProduct(final Long id) {
+		return productRepository.findById(id).get();
 	}
 
 }
