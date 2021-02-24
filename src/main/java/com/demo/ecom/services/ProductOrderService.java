@@ -48,7 +48,7 @@ public class ProductOrderService implements IProductOrderService {
 			orderDetailList.stream().forEach(item -> {
 				Product product = productRepository.findById(item.getProduct().getId()).get();
 				item.setProduct(product);
-				
+
 				if (isValidItem(product, item.getQuantity(), validations)) {
 					if (updateInventoryAndCreateOrder(product, item.getQuantity())) {
 						successfulTransactions.add(item);
@@ -90,7 +90,10 @@ public class ProductOrderService implements IProductOrderService {
 				int newQuantity = existingQuantity - selectedQuantity;
 				productFromDb.setAvailableQuantity(newQuantity);
 
+				// Save the order to database.
 				productRepository.save(productFromDb);
+
+				// Update the product count.
 				productOrderRepository.save(productOrder);
 
 				inventoryUpdated = true;
@@ -98,9 +101,19 @@ public class ProductOrderService implements IProductOrderService {
 		} finally {
 			lock.unlock();
 		}
+
 		return inventoryUpdated;
 	}
 
+	/**
+	 * Validates the cart item availability.
+	 * 
+	 * @param product          The selected product.
+	 * @param selectedQuantity The selected quantity.
+	 * @param validations      Validation errors.
+	 * 
+	 * @return Returns true if available else false.
+	 */
 	private boolean isValidItem(final Product product, final long selectedQuantity,
 			final List<OrderValidationError> validations) {
 		boolean isValid = true;
@@ -120,6 +133,13 @@ public class ProductOrderService implements IProductOrderService {
 		return isValid;
 	}
 
+	/**
+	 * Add validation message to list.
+	 * 
+	 * @param validations  Validation list object.
+	 * @param code         Error code.
+	 * @param errorMessage Error message.
+	 */
 	private void addValidationError(final List<OrderValidationError> validations, final String code,
 			final String errorMessage) {
 		validations.add(new OrderValidationError(code, errorMessage));

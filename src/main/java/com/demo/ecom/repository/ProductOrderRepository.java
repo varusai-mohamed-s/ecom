@@ -8,6 +8,8 @@ import org.springframework.data.repository.CrudRepository;
 import com.demo.ecom.models.ProductOrder;
 
 /**
+ * Repository to handle {@link ProductOrder}.
+ * 
  * @author Varusai
  *
  */
