@@ -32,7 +32,7 @@ public class SwaggerConfig {
 	 * @return Returns the {@link ApiInfo} object.
 	 */
 	private ApiInfo buildApiInfo() {
-		return new ApiInfoBuilder().title("mastercarT Spring REST API")
-				.description("mastercarT Spring REST API documentation").version("0.0.1").build();
+		return new ApiInfoBuilder().title("Shopping cart app REST API")
+				.description("Shopping cart app - REST API documentation").version("0.0.1").build();
 	}
 }

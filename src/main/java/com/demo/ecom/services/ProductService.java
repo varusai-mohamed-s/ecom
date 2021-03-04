@@ -5,6 +5,7 @@ package com.demo.ecom.services;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -28,12 +29,13 @@ public class ProductService implements IProductService {
 	public List<Product> getProducts() {
 		final List<Product> productList = new ArrayList<>();
 		productRepository.findAll().forEach(productList::add);
+
 		return productList;
 	}
 
 	@Override
-	public Product getProduct(final Long id) {
-		return productRepository.findById(id).get();
+	public Optional<Product> getProduct(final Long id) {
+		return productRepository.findById(id);
 	}
 
 }

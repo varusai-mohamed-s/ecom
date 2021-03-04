@@ -73,9 +73,9 @@ public class EcomApplication {
 	 * @return Returns CommandLineRunner.
 	 */
 	@Bean
-	public CommandLineRunner demo(ProductRepository repository) {
+	public CommandLineRunner setupDefaultData(ProductRepository repository) {
 		return (args) -> {
-			// save a few products
+			// save few products
 			repository.save(new Product("Product 1", 500.0, 4, "Product 1 description", 20));
 			repository.save(new Product("Product 2", 1300.0, 2, "Product 2 description", 200));
 			repository.save(new Product("Product 3", 700.0, 3, "Product 3 description", 70));

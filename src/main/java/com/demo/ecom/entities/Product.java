@@ -26,30 +26,15 @@ public class Product {
 	private int availableQuantity;
 
 	/**
-	 * 
+	 * Default constructor
 	 */
 	public Product() {
+		super();
 	}
 
 	/**
-	 * @param id
-	 * @param name
-	 * @param price
-	 * @param rating
-	 * @param description
-	 * @param availableQuantity
-	 */
-	public Product(String name, double price, int rating, String description, int availableQuantity) {
-		this.name = name;
-		this.price = price;
-		this.rating = rating;
-		this.description = description;
-		this.availableQuantity = availableQuantity;
-	}
-	
-	
-
-	/**
+	 * All parameters constructor.
+	 * 
 	 * @param id
 	 * @param name
 	 * @param price
@@ -64,6 +49,32 @@ public class Product {
 		this.rating = rating;
 		this.description = description;
 		this.availableQuantity = availableQuantity;
+	}
+
+	/**
+	 * Parameterized constructor.
+	 * 
+	 * @param name
+	 * @param price
+	 * @param rating
+	 * @param description
+	 * @param availableQuantity
+	 */
+	public Product(String name, double price, int rating, String description, int availableQuantity) {
+		this.name = name;
+		this.price = price;
+		this.rating = rating;
+		this.description = description;
+		this.availableQuantity = availableQuantity;
+	}
+
+	/**
+	 * Parameterized constructor.
+	 * 
+	 * @param id
+	 */
+	public Product(Long id) {
+		this.id = id;
 	}
 
 	/**

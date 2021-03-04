@@ -76,6 +76,13 @@ public class ProductOrderService implements IProductOrderService {
 
 	}
 
+	/**
+	 * Updates the inventory and creates order.
+	 * 
+	 * @param product          The product to be ordered.
+	 * @param selectedQuantity The quantity of the order.
+	 * @return Returns true if the inventory successfully updated.
+	 */
 	private boolean updateInventoryAndCreateOrder(Product product, int selectedQuantity) {
 		boolean inventoryUpdated = false;
 		final ProductOrder productOrder = new ProductOrder(product.getName(), product.getPrice(), selectedQuantity);

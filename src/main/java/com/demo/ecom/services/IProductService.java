@@ -1,6 +1,7 @@
 package com.demo.ecom.services;
 
 import java.util.List;
+import java.util.Optional;
 
 import com.demo.ecom.entities.Product;
 
@@ -25,5 +26,5 @@ public interface IProductService {
 	 * @param id The id of the product.
 	 * @return Returns the product detail.
 	 */
-	Product getProduct(Long id);
+	Optional<Product> getProduct(Long id);
 }
