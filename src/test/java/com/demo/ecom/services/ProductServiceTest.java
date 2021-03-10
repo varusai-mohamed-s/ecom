@@ -70,11 +70,11 @@ public class ProductServiceTest {
 	public void testGetProductInvalidId() {
 		final Long productId = 100L;
 
-		doReturn(Optional.of(null)).when(productRepository).findById(productId);
+		doReturn(Optional.empty()).when(productRepository).findById(productId);
 
 		final Optional<Product> actual = productService.getProduct(100L);
 
-		assertThat(actual).isNull();
+		assertThat(actual).isEmpty();
 	}
 
 	/**
